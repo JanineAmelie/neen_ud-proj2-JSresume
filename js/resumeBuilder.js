@@ -30,7 +30,7 @@ var education = {
         "name": "School of Rock",
         "location": "Unicorn Land",
         "degree": "Bachelor of Unicorn Studies",
-        "majors": [ "2D", "3D" ],
+        "majors": ["2D", "3D"],
         "dates": " 2010-2015",
         "url": "http://www.lipsum.com/"
     } ],
