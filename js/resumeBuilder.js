@@ -30,7 +30,7 @@ var education = {
         "name": "School of Rock",
         "location": "Unicorn Land",
         "degree": "Bachelor of Unicorn Studies",
-        "majors": ["2D", "3D"],
+        "majors": [ "2D", "3D" ],
         "dates": " 2010-2015",
         "url": "http://www.lipsum.com/"
     } ],
@@ -252,57 +252,7 @@ work.display = function() {
 };
 
 projects.display = function() {
-    /*
-    var HTMLprojectHolder = '';
-
-    for (var i = 0; i < this.projects.length; i++) {
-        var tempItem = HTMLprojectItem;
-        tempItem = tempItem.replace('%title%', this.projects[i].title);
-        tempItem = tempItem.replace('%client%', this.projects[i].client);
-        tempItem = tempItem.replace('%dates%', this.projects[i].dates);
-        tempItem = tempItem.replace('%description%', this.projects[i].description);
-        tempItem = tempItem.replace('%url%', this.projects[i].url);
-        HTMLprojectHolder += tempItem;
-    }
-
-    //$("#project-details-container").append(HTMLprojectHolder);
-
-
-    //We'll reuse htmlprojectsHolder for the next loop. Instead of creating a
-    //new variable to hold the html, here, we empty it out again.
-    HTMLprojectsHolder = '';
-    tempItem = '';
-
-    //now to add the images to the id="project-images-container"!
-    //loop through each project(i)
-    var projectsBoxHTML;
-    var imageHTML = '<img class="border-white img-responsive project-img" src="%image%">';
-
-    for (var i = 0; i < this.projects.length; i++) {
-
-         //html of the div that will contain the image strings
-         //for each project
-         projectsBoxHTML = HTMLprojectImgItem;
-
-         //string which holds the html for images
-         //e.g. <img src="img1.jpg"><img src="img2.jpg"> etc.
-        //which will need to be added inside the projectsBoxHTML, by replacing
-         //%imagestringlist%
-         imageHTMLholder = '';
-
-
-        //loop through the array of project images inside each object
-        for (var j = 0; j < this.projects[i].images.length; j++) {
-            imageHTMLholder += imageHTML.replace('%image%', this.projects[i].images[j]);
-        }
-
-        HTMLprojectsHolder += projectsBoxHTML.replace('%imagestringlist%', imageHTMLholder);
-    }
-
-    $("#project-images-container").append(HTMLprojectsHolder);
-    */
-
-    //LOOP THROUGH EACH PROJECT-->
+    //LOOP THROUGH EACH PROJECT
 
     var finalProjectHTML = '';
 
