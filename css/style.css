@@ -379,6 +379,15 @@ a:focus {
   color: #fff;
 }
 
+ img.project-img {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.project-item-row {
+  padding: 0 0 25px;
+}
+
 
 /*==================================================
              Skill Section
@@ -459,7 +468,7 @@ i.fa-angle-double-right {
 
 
 /*==================================================
-            PROJECTS: Skill Chart Labels;
+            PROFESSIONAL SKILLS: Skill Chart Labels;
 ==================================================*/
 
 .skill-chart .skill-chart-item {

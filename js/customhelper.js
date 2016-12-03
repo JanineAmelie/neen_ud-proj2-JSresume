@@ -2,6 +2,9 @@
 // My custom 'helper.js' file, because I wanted a different layout.
 //================================================================================
 
+//=========================
+// SECTION: ABOUT templates
+//=========================
 var mainName = '<h1 id="main-name"> %data%</h1>';
 
 var mainPic = ' <div class="row about-image"> <img class="img-responsive main-image" src="%data%" alt="picture of me"> </div>';
@@ -24,9 +27,27 @@ var mainDescription ='<p id ="desc-text">%data%</p>';
 
 var socialArray = ['<li><a class="hvr-buzz" href="#"><i class="fa fa-facebook"></i></a></li>', '<li><a class="hvr-buzz" href="#"><i class="fa fa-twitter"></i></a></li>', '<li><a class="hvr-buzz" href="#"><i class="fa fa-github"></i> </a></li>', '<li><a class="hvr-buzz" href="#"><i class="fa fa-linkedin"></i> </a></li>'];
 
+//==============================
+// SECTION: EXPERIENCE templates
+//==============================
+
 var HTMLworkItem ='<div class="row experience-block"><div class="col-lg-6 col-md-6 col-sm-6"><div class="resume-icon"><span class="glyphicon glyphicon-briefcase"></span></div><div class="resume-name"><h3>%employer%</h3><span>%dates%&nbsp;&nbsp;</span><span class="location-span">%location%</span></div></div><div class="col-lg-6 col-md-6 col-sm-6"><div class="resume-info"><h3>%title%</h3><p class="">%description%</p></div></div></div>';
 
-var HTMLprojectItem ='<div class="row resume-block project-item"><div class="col-lg-4 col-md-4 col-sm-4"><div class="project-box"><img class="border-white img-responsive project-img" src="%images%"></div></div><div class="col-lg-8 col-md-8 col-sm-8"><div class="project-info"><h3 class="clearfix">%title%</h3><h4>%client%</h4><h4>&nbsp;|&nbsp;</h4><h4 class="project-date">%dates%</h4><p>%description%</p><span><a href="%url%">Project URL</a></span></div></div></div>';
+//==============================
+// SECTION: PROJECTS templates
+//==============================
+
+var HTMLprojectItem = ' <div class="row project-item-row"> <div id="project-images-container" class="col-lg-6 col-md-6 col-sm-5"> %imagesHTMLhere% </div> <div id="project-details-container" class="col-lg-6 col-md-6 col-sm-7"> %descriptionHTMLhere% </div> </div>';
+
+var HTMLprojectDescItem ='<div class="project-info"> <h3 class="clearfix">%title%</h3> <h4>%client%</h4> <h4>&nbsp;|&nbsp;</h4> <h4 class="project-date">%dates%</h4> <p>%description%</p><span><a href="%url%">Project URL</a></span> </div>';
+
+var imageHTML = '<img class="border-white img-responsive project-img" src="%image%">';
+
+var HTMLprojectImgItem ='<div class="project-box">%imagestringlist%</div>';
+
+//==============================
+// SECTION: EDUCATION templates
+//==============================
 
 var HTMLbachelorItem ='<div class="school-inner-item"> <h4>%degree%</h4> <span>%name%</span><br> <span>%majors%</span><span class="clearfix"></span> <p>%location%</p>&nbsp;&nbsp;<p>%dates%</p> </div>';
 
@@ -34,8 +55,16 @@ var HTMLonlineItem ='<div class="online-inner-item"> <h4>%title%</h4> <span>%sch
 
 var HTMLknowledgeItem = '<li><i class="fa fa-angle-double-right" aria-hidden="true"></i>%data%</li>';
 
+//==============================
+// SECTION: SKILLS templates
+//==============================
+
 var HTMLprogressItem ='<div class="progress"> <div class="progress-bar %colorclass%" role="progressbar" aria-valuenow="%level%" aria-valuemin="0" aria-valuemax="100" style="width: %level%%"> <span class="sr-only">%level%% Complete </span> </div> <span class="progress-type">%name%</span> <span class="progress-completed">%level%%</span> </div>';
 
 var HTMLworkItem ='<div class="row resume-block"><div class="col-lg-6 col-md-6 col-sm-6"><div class="resume-icon"><span class="glyphicon glyphicon-briefcase"></span></div><div class="resume-name"><h3>%employer%</h3><span>%dates%</span><span class="blocker">%location%</span></div></div><div class="col-lg-6 col-md-6 col-sm-6"><div class="resume-info"><h3>%title%</h3><p class="">%description%</p></div></div></div>';
+
+//==============================
+// SECTION: MAP Templates
+//==============================
 
 var googleMap = '<div id="map"></div>';

@@ -1,6 +1,6 @@
 //================================================================================
 // Data
-//===============================================================================
+//================================================================================
 var descText = "Once had a dream of lecturing about wieners in the financial sector. Lead a team developing strategies for chess sets in the financial sector. Earned praised for my work testing the market for clip-on ties on the black market. Spent 2002-2010 supervising the production of carnival rides in Los Angeles, CA. Earned praised for my work testing the market for magma in Pensacola, FL. Have a strong interest in training etch-a-sketches for no pay.";
 
 //================================================================================
@@ -18,23 +18,23 @@ var bio = {
         "twitter": "faek",
         "location": "Unicorn Land, Space",
     },
-    "bioPic": "images/me.jpg",
-    "welcomeMsg": descText,
-    "skills": ["Photoshop", "Illustrator", "Premiere", "3D Maya", "HTML / CSS", "JS"]
+    "biopic": "images/me.jpg",
+    "welcomeMessage": descText,
+    "skills": [ "Photoshop", "Illustrator", "Premiere", "3D Maya", "HTML / CSS", "JS" ]
 };
 
 //================================================================================
 
 var education = {
-    "schools": [{
+    "schools": [ {
         "name": "School of Rock",
         "location": "Unicorn Land",
         "degree": "Bachelor of Unicorn Studies",
-        "majors": "2D & 3D Graphics Track",
+        "majors": [ "2D", "3D" ],
         "dates": " 2010-2015",
         "url": "http://www.lipsum.com/"
-    }],
-    "onlineCourses": [{
+    } ],
+    "onlineCourses": [ {
         "title": "Front-End Developer Nanodegree",
         "school": "Udacity",
         "dates": "Ongoing",
@@ -55,7 +55,7 @@ var education = {
 //================================================================================
 
 var work = {
-    "jobs": [{
+    "jobs": [ {
         "employer": "Fasephase inc",
         "title": "Direct Identiy Liason",
         "location": "Canada",
@@ -79,41 +79,41 @@ var work = {
         "location": "Antartica",
         "dates": "May - September 2013",
         "description": "n not be seen. Listened for, he can not be heard. Touched, can not be felt. This rice paper is the test. Fragile as the wings of the dragonfly, clinging as the cocoon of the silk worm"
-    }],
+    } ],
 };
 
 //================================================================================
 
 var projects = {
-    "projects": [{
+    "projects": [ {
         "title": "starship Enterprise",
         "client": "Client",
         "dates": "Month, 201X",
         "description": "Space, the final frontier. These are the voyages of the starship Enterprise. Its five year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before!",
         "url": "http://www.google.com",
-        "images": ["http://placehold.it/250x150/fff.jpg"]
+        "images": [ "https://placeimg.com/150/150/animals/grayscale", "https://placeimg.com/150/150/arch/grayscale" ]
     }, {
         "title": "Lorem Ipsum Moon Star",
         "client": "Client",
         "dates": "Month, 201X",
         "description": "Wanted to get myself a new cell phone so I could hear myself as a ringtone. Who knew the store would go and check my credit score? Now all they let me have is this dinosaur!",
         "url": "http://www.google.com",
-        "images": ["http://placehold.it/250x150/fff.jpg"]
+        "images": [ "https://placeimg.com/150/150/people/grayscale", "https://placeimg.com/150/150/nature/grayscale" ]
     }, {
         "title": "Lorem Ipsum Asteroids",
         "client": "Client",
         "dates": "Month, 201X",
         "description": "Hello hello hello, can anybody hear me? I know I know I know, I should have gone to Free Credit Report dot com! That's where I should have gone, could have got my knowledge on.",
         "url": "http://www.google.com",
-        "images": ["http://placehold.it/250x150/fff.jpg"]
-    }],
+        "images": [ "https://placeimg.com/150/150/tech/grayscale", "https://placeimg.com/150/150/any/grayscale" ]
+    } ],
 };
 
 //================================================================================
 
 var skills = {
-    "knowledge": ["Lockpicking", "Flower Arrangement", "Foraging", "Paper Cutting", "Basic Video Editing", "Swimming"],
-    "technicalskills": [{
+    "knowledge": [ "Lockpicking", "Flower Arrangement", "Foraging", "Paper Cutting", "Basic Video Editing", "Swimming" ],
+    "technicalskills": [ {
         "name": "HTML / CSS",
         "level": "60",
         "colorclass": "p-web"
@@ -137,7 +137,7 @@ var skills = {
         "name": "Autodesk Maya",
         "level": "60",
         "colorclass": "p-maya"
-    }]
+    } ]
 };
 
 
@@ -148,25 +148,48 @@ var skills = {
 education.display = function() {
     var tempSchoolItem = '';
 
-    for (var i = 0; i < this.schools.length; i++) {
+    for ( var i = 0; i < this.schools.length; i++ ) {
         tempSchoolItem = HTMLbachelorItem;
-        tempSchoolItem = tempSchoolItem.replace('%name%', this.schools[i].name);
-        tempSchoolItem = tempSchoolItem.replace('%degree%', this.schools[i].degree);
-        tempSchoolItem = tempSchoolItem.replace('%majors%', this.schools[i].majors);
-        tempSchoolItem = tempSchoolItem.replace('%location%', this.schools[i].location);
-        tempSchoolItem = tempSchoolItem.replace('%dates%', this.schools[i].dates);
+        tempSchoolItem = tempSchoolItem.replace( '%name%', this.schools[ i ].name );
+        tempSchoolItem = tempSchoolItem.replace( '%degree%', this.schools[ i ].degree );
+
+        if ( this.schools[ i ].majors.length > 0 ) {
+            //I want a comma to appear after the first major
+            // in order to do that, the first element will already be part
+            //of the string, and seperated from the loop.
+
+            var tempMajorString = 'Majors: ' + this.schools[ i ].majors[ 0 ];
+
+            //all the remaining elements will be appended with a comma
+            //in front to the existing first element, the loop
+            //starts at 1 because I want to start at the second element
+            //of the array.
+            for ( var j = 1; j < this.schools[ i ].majors.length; j++ ) {
+                var theMajor = this.schools[ i ].majors[ j ];
+
+                tempMajorString += ', ' + theMajor;
+            }
+
+            tempSchoolItem = tempSchoolItem.replace( '%majors%', tempMajorString );
+        } else {
+            tempSchoolItem = tempSchoolItem.replace( '%majors%', 'No Majors Listed' );
+        }
+
+
+        tempSchoolItem = tempSchoolItem.replace( '%location%', this.schools[ i ].location );
+        tempSchoolItem = tempSchoolItem.replace( '%dates%', this.schools[ i ].dates );
     }
 
     var onlineCoursesHolder = '';
     var tempOnlineItem = '';
 
-    for (i = 0; i < this.onlineCourses.length; i++) {
+    for ( i = 0; i < this.onlineCourses.length; i++ ) {
         tempOnlineItem = HTMLonlineItem;
 
-        tempOnlineItem = tempOnlineItem.replace('%school%', this.onlineCourses[i].school);
-        tempOnlineItem = tempOnlineItem.replace('%title%', this.onlineCourses[i].title);
-        tempOnlineItem = tempOnlineItem.replace('%date%', this.onlineCourses[i].dates);
-        tempOnlineItem = tempOnlineItem.replace('%url%', this.onlineCourses[i].url);
+        tempOnlineItem = tempOnlineItem.replace( '%school%', this.onlineCourses[ i ].school );
+        tempOnlineItem = tempOnlineItem.replace( '%title%', this.onlineCourses[ i ].title );
+        tempOnlineItem = tempOnlineItem.replace( '%date%', this.onlineCourses[ i ].dates );
+        tempOnlineItem = tempOnlineItem.replace( '%url%', this.onlineCourses[ i ].url );
         onlineCoursesHolder += tempOnlineItem;
     }
 
@@ -175,36 +198,36 @@ education.display = function() {
         "online": onlineCoursesHolder
     };
 
-    $("#section_bachelor").append(educationHTML.bachelor);
-    $("#section_online").append(educationHTML.online);
+    $( "#section_bachelor" ).append( educationHTML.bachelor );
+    $( "#section_online" ).append( educationHTML.online );
 
     return;
 };
 
 bio.display = function() {
-    $("#picture-container").prepend(mainPic.replace("%data%", bio.bioPic));
-    $("#main-name").prepend(mainRole.replace("%data%", bio.role));
-    $("#main-name").prepend(mainName.replace("%data%", bio.name));
-    $("#first-row").append(mainNickname.replace("%data%", bio.nickname));
-    $("#first-row").append(mainEmail.replace("%data%", bio.contacts.email));
-    $("#first-row").append(mainPhone.replace("%data%", bio.contacts.mobile));
-    $("#second-row").prepend(mainBirth.replace("%data%", bio.birthday));
-    $("#second-row").append(mainLocation.replace("%data%", bio.contacts.location));
-    $("#second-row").append(mainNationality.replace("%data%", bio.nationality));
-    $("#third-row").append(mainDescription.replace("%data%", bio.welcomeMsg));
+    $( "#picture-container" ).prepend( mainPic.replace( "%data%", bio.biopic ) );
+    $( "#main-name" ).prepend( mainRole.replace( "%data%", bio.role ) );
+    $( "#main-name" ).prepend( mainName.replace( "%data%", bio.name ) );
+    $( "#first-row" ).append( mainNickname.replace( "%data%", bio.nickname ) );
+    $( "#first-row" ).append( mainEmail.replace( "%data%", bio.contacts.email ) );
+    $( "#first-row" ).append( mainPhone.replace( "%data%", bio.contacts.mobile ) );
+    $( "#second-row" ).prepend( mainBirth.replace( "%data%", bio.birthday ) );
+    $( "#second-row" ).append( mainLocation.replace( "%data%", bio.contacts.location ) );
+    $( "#second-row" ).append( mainNationality.replace( "%data%", bio.nationality ) );
+    $( "#third-row" ).append( mainDescription.replace( "%data%", bio.welcomeMessage ) );
 
-    for (var i = 0; i < socialArray.length; i++) {
-        $("#social-buttons").append(socialArray[i]);
+    for ( var i = 0; i < socialArray.length; i++ ) {
+        $( "#social-buttons" ).append( socialArray[ i ] );
     }
 
-    for (i = 0; i < bio.skills.length; i++) {
-        document.getElementById('skill-list').innerHTML += '<li>' + bio.skills[i] + '</li>';
+    for ( i = 0; i < bio.skills.length; i++ ) {
+        document.getElementById( 'skill-list' ).innerHTML += '<li>' + bio.skills[ i ] + '</li>';
     }
 
-    for (var key in bio.contacts) {
-        if (bio.contacts.hasOwnProperty(key)) {
+    for ( var key in bio.contacts ) {
+        if ( bio.contacts.hasOwnProperty( key ) ) {
             //console.log(bio.contact[key])
-            document.getElementById('footer-contacts').innerHTML += '<li>' + bio.contacts[key] + '</li>';
+            document.getElementById( 'footer-contacts' ).innerHTML += '<li>' + bio.contacts[ key ] + '</li>';
         }
     }
 };
@@ -213,22 +236,23 @@ work.display = function() {
     var HTMLworkHolder = '';
     var workTempItem = '';
 
-    for (var i = 0; i < this.jobs.length; i++) {
+    for ( var i = 0; i < this.jobs.length; i++ ) {
         workTempItem = HTMLworkItem;
 
-        workTempItem = workTempItem.replace('%employer%', this.jobs[i].employer);
-        workTempItem = workTempItem.replace('%title%', this.jobs[i].title);
-        workTempItem = workTempItem.replace('%dates%', this.jobs[i].dates);
-        workTempItem = workTempItem.replace('%location%', this.jobs[i].location);
-        workTempItem = workTempItem.replace('%description%', this.jobs[i].description);
+        workTempItem = workTempItem.replace( '%employer%', this.jobs[ i ].employer );
+        workTempItem = workTempItem.replace( '%title%', this.jobs[ i ].title );
+        workTempItem = workTempItem.replace( '%dates%', this.jobs[ i ].dates );
+        workTempItem = workTempItem.replace( '%location%', this.jobs[ i ].location );
+        workTempItem = workTempItem.replace( '%description%', this.jobs[ i ].description );
         HTMLworkHolder += workTempItem;
     }
-    $("#section_experience").append(HTMLworkHolder);
+    $( "#section_experience" ).append( HTMLworkHolder );
 
     return;
 };
 
 projects.display = function() {
+    /*
     var HTMLprojectHolder = '';
 
     for (var i = 0; i < this.projects.length; i++) {
@@ -238,11 +262,93 @@ projects.display = function() {
         tempItem = tempItem.replace('%dates%', this.projects[i].dates);
         tempItem = tempItem.replace('%description%', this.projects[i].description);
         tempItem = tempItem.replace('%url%', this.projects[i].url);
-        tempItem = tempItem.replace('%images%', this.projects[i].images[0]);
         HTMLprojectHolder += tempItem;
     }
 
-    $("#section_projects").append(HTMLprojectHolder);
+    //$("#project-details-container").append(HTMLprojectHolder);
+
+
+    //We'll reuse htmlprojectsHolder for the next loop. Instead of creating a
+    //new variable to hold the html, here, we empty it out again.
+    HTMLprojectsHolder = '';
+    tempItem = '';
+
+    //now to add the images to the id="project-images-container"!
+    //loop through each project(i)
+    var projectsBoxHTML;
+    var imageHTML = '<img class="border-white img-responsive project-img" src="%image%">';
+
+    for (var i = 0; i < this.projects.length; i++) {
+
+         //html of the div that will contain the image strings
+         //for each project
+         projectsBoxHTML = HTMLprojectImgItem;
+
+         //string which holds the html for images
+         //e.g. <img src="img1.jpg"><img src="img2.jpg"> etc.
+        //which will need to be added inside the projectsBoxHTML, by replacing
+         //%imagestringlist%
+         imageHTMLholder = '';
+
+
+        //loop through the array of project images inside each object
+        for (var j = 0; j < this.projects[i].images.length; j++) {
+            imageHTMLholder += imageHTML.replace('%image%', this.projects[i].images[j]);
+        }
+
+        HTMLprojectsHolder += projectsBoxHTML.replace('%imagestringlist%', imageHTMLholder);
+    }
+
+    $("#project-images-container").append(HTMLprojectsHolder);
+    */
+
+    //LOOP THROUGH EACH PROJECT-->
+
+    var finalProjectHTML = '';
+
+    for ( var i = 0; i < this.projects.length; i++ ) {
+
+
+        //==============================
+        // generating the descHTML
+        //==============================
+        var descHTMLholder = '';
+        var tempItem = HTMLprojectDescItem;
+
+        tempItem = tempItem.replace( '%title%', this.projects[ i ].title );
+        tempItem = tempItem.replace( '%client%', this.projects[ i ].client );
+        tempItem = tempItem.replace( '%dates%', this.projects[ i ].dates );
+        tempItem = tempItem.replace( '%description%', this.projects[ i ].description );
+        tempItem = tempItem.replace( '%url%', this.projects[ i ].url );
+
+        //assigned into another variable for readability
+        descHTMLholder = tempItem;
+
+        //==============================
+        // generating the imagesHTML
+        //==============================
+
+        var imagesHTMLholder = '';
+        tempItem = imageHTML;
+
+        for ( var j = 0; j < this.projects[ i ].images.length; j++ ) {
+            imagesHTMLholder += tempItem.replace( '%image%', this.projects[ i ].images[ j ] );
+        }
+
+        //==============================
+        // generating the rowHTML
+        //==============================
+        var tempItemRow = HTMLprojectItem;
+
+        tempItemRow = tempItemRow.replace( '%descriptionHTMLhere%', descHTMLholder );
+        tempItemRow = tempItemRow.replace( '%imagesHTMLhere%', imagesHTMLholder );
+
+        //add the row to the main holder of all the HTML
+        finalProjectHTML += tempItemRow;
+    }
+
+    //when all loops have been completed:
+    $( '#projects-container' ).append( finalProjectHTML );
 
     return;
 };
@@ -252,17 +358,17 @@ skills.display = function() {
     var HTMLtechSkillHolder = '';
     var skillsTempItem = '';
 
-    for (var i = 0; i < this.knowledge.length; i++) {
+    for ( var i = 0; i < this.knowledge.length; i++ ) {
         skillsTempItem = HTMLknowledgeItem;
-        skillsTempItem = skillsTempItem.replace('%data%', this.knowledge[i]);
+        skillsTempItem = skillsTempItem.replace( '%data%', this.knowledge[ i ] );
         HTMLknowledgeHolder += skillsTempItem;
     }
 
-    for (i = 0; i < this.technicalskills.length; i++) {
+    for ( i = 0; i < this.technicalskills.length; i++ ) {
         skillsTempItem = HTMLprogressItem;
-        skillsTempItem = skillsTempItem.replace('%name%', this.technicalskills[i].name);
-        skillsTempItem = skillsTempItem.replace('%colorclass%', this.technicalskills[i].colorclass);
-        skillsTempItem = skillsTempItem.replace(/%level%/g, this.technicalskills[i].level);
+        skillsTempItem = skillsTempItem.replace( '%name%', this.technicalskills[ i ].name );
+        skillsTempItem = skillsTempItem.replace( '%colorclass%', this.technicalskills[ i ].colorclass );
+        skillsTempItem = skillsTempItem.replace( /%level%/g, this.technicalskills[ i ].level );
         HTMLtechSkillHolder += skillsTempItem;
     }
 
@@ -271,8 +377,8 @@ skills.display = function() {
         "techskill": HTMLtechSkillHolder
     };
 
-    $("#knowledgelist").append(knowledgeHTML.knowledge);
-    $("#progresslist").append(knowledgeHTML.techskill);
+    $( "#knowledgelist" ).append( knowledgeHTML.knowledge );
+    $( "#progresslist" ).append( knowledgeHTML.techskill );
 
     return;
 };
@@ -292,33 +398,31 @@ projects.display();
 //================================================================================
 
 function scrollNav() {
-    $('.nav a').click(function() {
+    $( '.nav a' ).click( function() {
         //Toggle Class
-        $(".active").removeClass("active");
-        $(this).closest('li').addClass("active");
+        $( ".active" ).removeClass( "active" );
+        $( this ).closest( 'li' ).addClass( "active" );
 
-        var theClass = $(this).attr("class");
-        $('.' + theClass).parent('li').addClass('active');
+        var theClass = $( this ).attr( "class" );
+        $( '.' + theClass ).parent( 'li' ).addClass( 'active' );
         //Animate
-        $('html, body').stop().animate({
-            scrollTop: $($(this).attr('href')).offset().top - 160
-        }, 400);
+        $( 'html, body' ).stop().animate( {
+            scrollTop: $( $( this ).attr( 'href' ) ).offset().top - 160
+        }, 400 );
         return false;
-    });
-    $('.scrollTop a').scrollTop();
+    } );
+    $( '.scrollTop a' ).scrollTop();
 }
 
 //setup the typing animation library (under the main name)
 TyperSetup();
 scrollNav();
 
-var offset = 80;
-
-$('.navbar li a').click(function(event) {
+$( '.navbar li a' ).click( function( event ) {
     event.preventDefault();
-    $($(this).attr('href'))[0].scrollIntoView();
+    $( $( this ).attr( 'href' ) )[ 0 ].scrollIntoView();
 
-});
+} );
 
 
 //================================================================================
