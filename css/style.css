@@ -1,0 +1,687 @@
+/*==================================================
+             Global Styles
+==================================================*/
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 17px;
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+  line-height: 21px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.gray h3 {
+  color: #ff669a;
+}
+
+.gray span {
+  color: #fff;
+}
+
+.gray p {
+  color: #ffd0e0;
+}
+
+.white h2 {
+  font-size: 30px;
+  color: #fff;
+}
+
+.white h3 {
+  color: #333;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.white span {
+  color: #2b303a;
+}
+
+.white p {
+  color: #333;
+}
+
+.gray {
+  background-color: #2b303a;
+}
+
+.white {
+  background-color: #fdfdfd;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+}
+
+.header {
+  padding: 7% 5% 5% 5%;
+  background-color: #fff;
+}
+
+.flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.center-content {
+  padding: 150px 5% 100px 5%;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+
+/*==================================================
+             Typer.js Style
+==================================================*/
+
+.rolep {
+  color: #ff669a;
+  -webkit-font-smoothing: antialiased;
+  font-style: italic;
+  font-size: 20px;
+  margin-top: -31px;
+  padding-left: 55px;
+}
+
+
+/*==================================================
+             Global Section Layout/Paddings
+==================================================*/
+
+.section-box {
+  clear: both;
+  background-color: #ff669a;
+  color: #fff;
+  display: inline-block;
+  margin: 50px 0 30px 0;
+  padding: 9px;
+}
+
+.resume-name {
+  padding-bottom: 20px;
+}
+
+.resume-block .resume-icon {
+  float: left;
+  margin-right: 30px;
+}
+
+.resume-icon span {
+  margin-bottom: 50px;
+}
+
+.resume-block {
+  padding: 2% 10% 50px 7%;
+}
+
+.experience-block {
+  padding: 2% 10% 5px 7%;
+}
+
+.resume-block .resume-name h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.resume-block .resume-name span {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.resume-block .resume-info h3 {
+  margin top: 0 0 20px 0;
+  font: 20px "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.resume-block .resume-icon span {
+  font-size: 3vw;
+  line-height: 50px;
+  margin-bottom: 80px;
+}
+
+.resume-block p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.sticky {
+  background: #2b303a;
+}
+
+
+/*==================================================
+             Navigations/Menu Styles
+==================================================*/
+
+.navbar-brand {
+  color: #ff669a;
+}
+
+#menu {
+  height: 60px;
+  color: #fff;
+  font: 19px "Open Sans", sans-serif;
+}
+
+#menu a {
+  color: #fff;
+}
+
+.navbar-brand,
+.navbar-nav>li>a {
+  text-shadow: none;
+}
+
+.icon-bar {
+  background-color: #fff;
+  color: #fff;
+  width: 34px;
+  height: 5px;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 30px;
+  height: 4px;
+  border-radius: 1px;
+}
+
+
+.nav li.active a {
+  text-decoration: none;
+  border-bottom: #ff669a 4px solid;
+  background-color: rgba(238, 238, 238, 0);
+  margin-bottom: 0;
+  transition: all 0.2s ease-out 0s;
+}
+
+.nav>li>a:focus {
+  text-decoration: none;
+  background-color: #2b303a;
+}
+
+.navbar {
+  background-color: #2b303a;
+  border-bottom: 1px solid #ff669a;
+  height: 88px;
+  padding: 10px 0 10px 0;
+}
+
+.navbar li a {
+  color: #fff;
+  font: 16px "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-smoothing: antialiased;
+  transition: all 0.2s ease-out 0s;
+}
+
+.navbar a:hover,
+a:focus {
+  color: #fff;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #2b303a;
+}
+
+
+/*==================================================
+             Education Section: Bachelor
+==================================================*/
+
+.school-item i {
+  margin-right: 8px;
+}
+
+.school-item h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.school-item p {
+  font-weight: 600;
+  font-size: 15px;
+  color: #666c77;
+  display: inline;
+}
+
+.school-inner-item {
+  padding-left: 3%;
+}
+
+.school-item h4 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ff669a;
+  line-height: 28px;
+}
+
+.school-item span {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
+/*==================================================
+             Education Section: Online
+==================================================*/
+
+.online-inner-item {
+  padding-left: 3%;
+  margin-bottom: 17px;
+}
+
+.online-inner-item p {
+  float: left;
+}
+
+.online-inner-item a {
+  font-weight: 600;
+  color: #ff669a;
+  font: 15px "Open Sans", sans-serif;
+  text-decoration: underline;
+}
+
+.online-inner-item a:hover {
+  color: #666c77;
+}
+
+
+/*==================================================
+             Projects Section
+==================================================*/
+
+.project-info h3 {
+  color: #ff669a;
+  margin: 0 0 7px 0;
+  font: 26px "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.project-info h4 {
+  font-weight: 600;
+  font-size: 17px;
+  color: #fff;
+  display: inline-block;
+}
+
+.project-info p {
+  margin-top: 10px;
+}
+
+.project-date {
+  color: grey;
+}
+
+.project-info a {
+  font-size: 14px;
+  color: #ff669a;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: underline;
+}
+
+.project-info a:hover {
+  color: #fff;
+}
+
+
+/*==================================================
+             Skill Section
+==================================================*/
+
+.skill-item h3 {
+  margin-bottom: 15px;
+}
+
+.skill-item li {
+  font-size: 16px;
+}
+
+.skill-item i {
+  margin-right: 8px;
+}
+
+i.fa-angle-double-right {
+  font-size: 23px;
+  color: #ff669a;
+  padding-right: 12px;
+}
+
+
+/*==================================================
+             Skills Progress Bars
+==================================================*/
+
+.progress {
+  position: relative;
+  height: 25px;
+}
+
+.progress > .progress-type {
+  position: absolute;
+  left: 0px;
+  font-weight: 800;
+  padding: 3px 30px 2px 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(25, 25, 25, 0.2);
+}
+
+.progress > .progress-completed {
+  position: absolute;
+  right: 0px;
+  font-weight: 800;
+  padding: 3px 10px 2px;
+}
+
+.progress-bar {
+  background-image: none;
+  background-color: #ff669a;
+}
+
+.p-ps {
+  background-color: #1e88e5;
+}
+
+.p-ill {
+  background-color: #fbc02d;
+}
+
+.p-prem {
+  background-color: #7e57c2;
+}
+
+.p-maya {
+  background-color: #464e44;
+}
+
+.p-web {
+  background-color: #ce4040;
+}
+
+.skill-item h3:last-of-type {
+  margin-top: 30px;
+}
+
+
+/*==================================================
+            PROJECTS: Skill Chart Labels;
+==================================================*/
+
+.skill-chart .skill-chart-item {
+  margin-bottom: 8px;
+  height: 45px;
+  background: #9ea8b6;
+  border-radius: 2px;
+  opacity: 0.8;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skill-chart .skill-chart-item p {
+  color: #9ea8b6;
+  font-size: 14px;
+  line-height: 45px;
+  padding-left: 15px;
+}
+
+.skill-chart .skill-chart-expand {
+  margin-top: 20px;
+}
+
+.skill-chart .skill-chart-expand:before {
+  display: block;
+  position: relative;
+  content: "";
+  width: 100%;
+  height: 1px;
+  margin-bottom: -10px;
+  background: #9ea8b6;
+}
+
+.skill-chart .skill-chart-expand .expand {
+  display: inline-block;
+  float: left;
+  width: 25%;
+}
+
+.skill-chart .skill-chart-expand .expand p {
+  color: #333333;
+  font-size: 12px;
+}
+
+.skill-chart .skill-chart-expand .expand:before {
+  display: block;
+  position: relative;
+  content: "";
+  width: 1px;
+  height: 10px;
+  margin: auto;
+  margin-bottom: 5px;
+  background: #9ea8b6;
+}
+
+.skill-chart .skill-chart-expand .expand.expand-left:before {
+  margin-left: 0;
+}
+
+.skill-chart .skill-chart-expand .expand.expand-right {
+  text-align: right;
+}
+
+.skill-chart .skill-chart-expand .expand.expand-right:before {
+  margin-right: 0;
+}
+
+
+/*==================================================
+             Map Styles
+==================================================*/
+
+.mapbox {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  width: 100%;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+.mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+
+/*==================================================
+             Footer "let's connect"
+==================================================*/
+
+#lets-connect {
+  background-color: #ff669a;
+  padding: 1px 0 0px 0;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 0;
+  text-align: center;
+}
+
+#lets-connect h2 {
+  background-color: #2b303a;
+  padding: 10px 0 10px 0;
+  font: 60px "Great Vibes", cursive;
+}
+
+
+/*==================================================
+             Utility Classes
+==================================================*/
+
+.clear-fix {
+  overflow: auto;
+}
+
+.blocker {
+  display: block;
+}
+
+.spacerline {
+  margin: 0 3px 0 3px;
+}
+
+
+/*==================================================
+             Media Queries
+==================================================*/
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width: 1200px) {
+  .resume-name span {
+    margin-left: 0;
+  }
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {
+  .biopic {
+    width: 175px;
+  }
+  .navbar-nav {
+    float: right!important;
+    margin: 0;
+  }
+
+  .container {
+    width: auto;
+  }
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 750px) {
+  #skills-h3,
+  .biopic {
+    display: block;
+  }
+  .resume-name {
+    padding-bottom: 5px;
+  }
+  .resume-info h3 {
+    margin-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .resume-info h3 {
+    margin: 4px 0 0 0;
+  }
+  .resume-info p {
+    margin-bottom: 46px;
+  }
+  .navbar {
+    background-color: #2b303a;
+    height: auto;
+  }
+  .resume-block .resume-icon {
+    float: none;
+    margin-right: 18px;
+  }
+  .navbar li,
+  a {
+    color: #fff;
+    font: 16px "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-smoothing: antialiased;
+    height: 52px;
+  }
+  .resume-block .resume-icon span {
+    display: none;
+  }
+  .biopic {
+    width: 150px;
+  }
+  .welcome-message {
+    display: none;
+  }
+
+  .picture {
+     padding: 0!important;
+}
+
+}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 480px) {
+
+}
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width: 320px) {}
