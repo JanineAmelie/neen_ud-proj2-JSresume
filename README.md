@@ -50,5 +50,5 @@ The resume was built using functions. The data, stored into four JS objects for 
 4. Double click the index.html file and open with your favorite browser.
 
 #### **Testing Live:**
-View the site live here: https://ninineen.github.io/neen_ud-proj2-JSresume/
+View the site live here: https://janineamelie.github.io/neen_ud-proj2-JSresume/
 
